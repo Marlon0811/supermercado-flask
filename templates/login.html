@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Boa Compra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🛒 Supermercado Boa Compra</h1>
+    <nav><a href="/">Início</a><a href="/cadastro">Cadastrar</a></nav>
+</header>
+
+<main class="form-container">
+    <div class="form-card">
+        <h2>Entrar</h2>
+
+        <form id="form-login">
+            <label>E-mail</label>
+            <input id="email" type="email" required>
+
+            <label>Senha</label>
+            <input id="senha" type="password" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p id="mensagem"></p>
+
+        <p>Ainda não possui uma conta? <a href="/cadastro">Cadastrar</a></p>
+    </div>
+</main>
+
+<script src="{{ url_for('static', filename='auth.js') }}"></script>
+</body>
+</html>

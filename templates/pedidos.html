@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus pedidos - Boa Compra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🛒 Supermercado Boa Compra</h1>
+    <nav><a href="/">Comprar</a><a href="/logout">Sair</a></nav>
+</header>
+
+<main>
+    <section class="pedidos">
+        <h2>📦 Meus pedidos</h2>
+
+        {% if pedidos %}
+            {% for pedido in pedidos %}
+                <div class="pedido">
+                    <h3>Pedido #{{ pedido.id }}</h3>
+                    <p><strong>Total:</strong> R$ {{ "%.2f"|format(pedido.total) }}</p>
+
+                    <ul>
+                        {% for item in pedido.itens %}
+                            <li>
+                                {{ item.quantidade }}x {{ item.nome }}
+                                — R$ {{ "%.2f"|format(item.preco * item.quantidade) }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Você ainda não possui pedidos.</p>
+        {% endif %}
+    </section>
+</main>
+
+</body>
+</html>
