@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #222;
+}
+
+header {
+    background: #087f23;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.inicio,
+#carrinho,
+.pedidos {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.inicio {
+    text-align: center;
+}
+
+.inicio h2 {
+    color: #087f23;
+    margin-bottom: 10px;
+}
+
+.aviso {
+    margin-top: 15px;
+    color: #a35a00;
+}
+
+#pesquisa {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.produto {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0001;
+}
+
+.produto h3 {
+    color: #087f23;
+    margin-bottom: 10px;
+}
+
+.produto p {
+    margin-bottom: 10px;
+}
+
+.preco {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+button {
+    background: #087f23;
+    color: white;
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #05651b;
+}
+
+#carrinho {
+    margin-top: 40px;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.quantidade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantidade button {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.total {
+    margin-top: 25px;
+    text-align: right;
+}
+
+.total h3 {
+    font-size: 22px;
+}
+
+#finalizar {
+    background: #ff9800;
+}
+
+.form-container {
+    max-width: 500px;
+}
+
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.form-card h2 {
+    margin-bottom: 20px;
+    color: #087f23;
+}
+
+.form-card label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-card input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-card button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-card a {
+    color: #087f23;
+}
+
+#mensagem {
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.pedido {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.pedido h3 {
+    color: #087f23;
+    margin-bottom: 10px;
+}
+
+.pedido ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+footer {
+    background: #087f23;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+
+    .item-carrinho {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
