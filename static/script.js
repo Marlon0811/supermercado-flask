@@ -168,3 +168,66 @@ botaoFinalizar.addEventListener("click", () => {
         }
     });
 });
+
+let slideAtual = 0;
+
+const slides = document.querySelectorAll(".slide");
+const indicadores = document.querySelectorAll(".indicador");
+
+function mostrarSlide(numero) {
+
+    slides.forEach(function(slide) {
+        slide.classList.remove("ativo");
+    });
+
+    indicadores.forEach(function(indicador) {
+        indicador.classList.remove("ativo");
+    });
+
+    slides[numero].classList.add("ativo");
+    indicadores[numero].classList.add("ativo");
+}
+
+function proximoSlide() {
+
+    slideAtual++;
+
+    if (slideAtual >= slides.length) {
+        slideAtual = 0;
+    }
+
+    mostrarSlide(slideAtual);
+}
+
+function slideAnterior() {
+
+    slideAtual--;
+
+    if (slideAtual < 0) {
+        slideAtual = slides.length - 1;
+    }
+
+    mostrarSlide(slideAtual);
+}
+
+document
+    .getElementById("carrosselProximo")
+    .addEventListener("click", proximoSlide);
+
+document
+    .getElementById("carrosselAnterior")
+    .addEventListener("click", slideAnterior);
+
+indicadores.forEach(function(indicador, index) {
+
+    indicador.addEventListener("click", function() {
+
+        slideAtual = index;
+
+        mostrarSlide(slideAtual);
+
+    });
+
+});
+
+setInterval(proximoSlide, 4000);
