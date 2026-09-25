@@ -89,6 +89,14 @@
 </section>
 <main>
     <section class="inicio">
+         <h2>Bem-vindo ao Boa Compra!</h2>
+        <p>Encontre os melhores produtos para sua casa.</p>
+
+        {% if not usuario %}
+            <p class="aviso">Faça login ou cadastre-se para finalizar seus pedidos.</p>
+        {% endif %}
+    </section>
+
 </section>
         <h2>Bem-vindo ao Boa Compra!</h2>
         <p>Encontre os melhores produtos para sua casa.</p>
